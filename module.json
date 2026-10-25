@@ -1,0 +1,44 @@
+{
+  "id": "coc7-fenetre-jet",
+  "title": "CoC7 — Fenêtre de jet thématique",
+  "description": "Habille la fenêtre qui s'ouvre avant un jet de L'Appel de Cthulhu (difficulté, dés bonus et malus) aux couleurs du thème du chat : Années 20, New York, Par-delà les Montagnes Hallucinées, New York 2026, Antarctique 2026. Elle change toute seule avec la bascule d'époque. Nécessite « CoC7 — Cartes de chat thématiques ». Foundry v14.",
+  "version": "1.0.0",
+  "authors": [
+    {
+      "name": "magisterphamtom",
+      "url": "https://github.com/magisterphamtom"
+    }
+  ],
+  "compatibility": {
+    "minimum": "14",
+    "verified": "14.368"
+  },
+  "relationships": {
+    "systems": [
+      {
+        "id": "CoC7",
+        "type": "system",
+        "compatibility": {
+          "minimum": "8.14",
+          "verified": "8.16"
+        }
+      }
+    ],
+    "requires": [
+      {
+        "id": "coc7-cartes-chat",
+        "type": "module",
+        "manifest": "https://github.com/magisterphamtom/coc7-cartes-chat/releases/latest/download/module.json"
+      }
+    ]
+  },
+  "styles": [
+    "styles/fenetre-jet.css"
+  ],
+  "url": "https://github.com/magisterphamtom/coc7-fenetre-jet",
+  "manifest": "https://github.com/magisterphamtom/coc7-fenetre-jet/releases/latest/download/module.json",
+  "download": "https://github.com/magisterphamtom/coc7-fenetre-jet/releases/download/v1.0.0/module.zip",
+  "bugs": "https://github.com/magisterphamtom/coc7-fenetre-jet/issues",
+  "readme": "https://github.com/magisterphamtom/coc7-fenetre-jet/blob/main/README.md",
+  "license": "https://github.com/magisterphamtom/coc7-fenetre-jet/blob/main/LICENSE"
+}

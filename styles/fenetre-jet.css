@@ -1,0 +1,159 @@
+/*
+ * CoC7 — Fenêtre de jet thématique
+ * Reprend les variables --c7cc-* posées sur <body> par « CoC7 — Cartes de chat thématiques »
+ * (classe c7cc-<thème>) : la fenêtre de jet suit donc le thème du chat, et la bascule d'époque
+ * la change toute seule. Seul le CSS change ; rien n'est modifié dans le système CoC7.
+ * Cible : la fenêtre « bonus-selection » (difficulté, dés bonus/malus) de CoC7 8.x.
+ */
+
+/* ---- Réglages propres à chaque thème (ce que les cartes de chat ne définissent pas) ---- */
+body.c7cc-annees20 {
+  --c7fj-solid: #18130d; --c7fj-good: #8fd49a; --c7fj-bad: #e06c5f;
+  --c7fj-radius: 2px; --c7fj-caps: uppercase; --c7fj-spacing: .08em; --c7fj-label-size: .72em;
+}
+body.c7cc-newyork {
+  --c7fj-solid: #0e1726; --c7fj-good: #86d99a; --c7fj-bad: #ee7b6e;
+  --c7fj-radius: 3px; --c7fj-caps: uppercase; --c7fj-spacing: .06em; --c7fj-label-size: .72em;
+}
+body.c7cc-montagnes {
+  --c7fj-solid: #eef0ea; --c7fj-good: #1f7a3a; --c7fj-bad: #b3261e;
+  --c7fj-radius: 2px; --c7fj-caps: none; --c7fj-spacing: .02em;
+}
+body.c7cc-ny2026 {
+  --c7fj-solid: #14161b; --c7fj-good: #5fd38a; --c7fj-bad: #ff6b5e;
+  --c7fj-radius: 10px; --c7fj-caps: none; --c7fj-spacing: 0;
+}
+body.c7cc-antarctique2026 {
+  --c7fj-solid: #eef3f7; --c7fj-good: #1b7f45; --c7fj-bad: #c2331f;
+  --c7fj-radius: 6px; --c7fj-caps: none; --c7fj-spacing: .02em;
+}
+
+/* ---- Fenêtre ---- */
+body.c7cc-on .application.coc7.dialog.bonus-selection {
+  background: var(--c7cc-bg);
+  color: var(--c7cc-ink);
+  border: 1px solid var(--c7cc-border);
+  outline: 1px solid var(--c7cc-border-outer);
+  outline-offset: 3px;
+  border-radius: var(--c7fj-radius, 4px);
+  box-shadow: var(--c7cc-shadow);
+  font-family: var(--c7cc-font-body);
+}
+
+body.c7cc-on .application.coc7.dialog.bonus-selection .window-header {
+  position: relative;
+  background: transparent;
+  border: 0;
+  color: var(--c7cc-ink);
+  padding-bottom: 6px;
+}
+body.c7cc-on .application.coc7.dialog.bonus-selection .window-header::after {
+  content: "";
+  position: absolute;
+  inset: auto 12px 0 12px;
+  height: 2px;
+  background: var(--c7cc-rule);
+}
+body.c7cc-on .application.coc7.dialog.bonus-selection .window-title {
+  font-family: var(--c7cc-font-title);
+  font-size: calc(var(--c7cc-title-size, 15px) * 1.15);
+  color: var(--c7cc-accent);
+  text-transform: var(--c7fj-caps, none);
+  letter-spacing: var(--c7fj-spacing, 0);
+}
+body.c7cc-on .application.coc7.dialog.bonus-selection .window-header button,
+body.c7cc-on .application.coc7.dialog.bonus-selection .window-header .header-control {
+  color: var(--c7cc-ink-dim);
+}
+
+body.c7cc-on .application.coc7.dialog.bonus-selection .window-content {
+  background: transparent;
+  color: var(--c7cc-ink);
+}
+
+/* ---- Champs ---- */
+body.c7cc-on .application.coc7.dialog.bonus-selection .dialog-content.standard-form .flexcol {
+  font-family: var(--c7cc-font-body);
+  color: var(--c7cc-ink);
+}
+body.c7cc-on .application.coc7.dialog.bonus-selection .dialog-content.standard-form .flexcol label {
+  font-family: var(--c7cc-font-label);
+  font-weight: var(--c7cc-label-weight, 400);
+  color: var(--c7cc-ink-dim);
+  font-size: var(--c7fj-label-size, 1em);
+  text-transform: var(--c7fj-caps, none);
+  letter-spacing: var(--c7fj-spacing, 0);
+}
+body.c7cc-on .application.coc7.dialog.bonus-selection .dialog-content.standard-form .flexcol input[type=number],
+body.c7cc-on .application.coc7.dialog.bonus-selection .dialog-content.standard-form .flexcol input[type=text],
+body.c7cc-on .application.coc7.dialog.bonus-selection .dialog-content.standard-form .flexcol select {
+  background: color-mix(in srgb, var(--c7fj-solid, #222) 70%, transparent);
+  color: var(--c7cc-ink);
+  border: 1px solid var(--c7cc-border);
+  border-radius: calc(var(--c7fj-radius, 4px) * .6);
+  font-family: var(--c7cc-font-body);
+}
+body.c7cc-on .application.coc7.dialog.bonus-selection .dialog-content.standard-form .flexcol input:focus,
+body.c7cc-on .application.coc7.dialog.bonus-selection .dialog-content.standard-form .flexcol select:focus {
+  outline: none;
+  border-color: var(--c7cc-accent);
+  box-shadow: 0 0 0 1px var(--c7cc-accent);
+}
+body.c7cc-on .application.coc7.dialog.bonus-selection select option {
+  background: var(--c7fj-solid, #222);
+  color: var(--c7cc-ink);
+}
+
+/* ---- Dés bonus / malus ---- */
+body.c7cc-on .application.coc7.dialog.bonus-selection section.window-content .bonus-penalty-selector .bonus-penalty-box {
+  background: linear-gradient(90deg,
+    color-mix(in srgb, var(--c7fj-bad, #b10000) 38%, var(--c7fj-solid, #222)),
+    var(--c7fj-solid, #222) 50%,
+    color-mix(in srgb, var(--c7fj-good, #059c07) 38%, var(--c7fj-solid, #222)));
+  border: 1px solid var(--c7cc-border);
+  border-radius: calc(var(--c7fj-radius, 4px) * .8);
+  box-shadow: inset 0 0 8px rgba(0, 0, 0, .25);
+  color: var(--c7cc-ink);
+  text-shadow: none;
+}
+body.c7cc-on .application.coc7.dialog.bonus-selection section.window-content .bonus-penalty-selector .bonus-penalty-box span {
+  color: var(--c7cc-ink);
+  font-family: var(--c7cc-font-body);
+}
+body.c7cc-on .application.coc7.dialog.bonus-selection section.window-content .bonus-penalty-selector .bonus-penalty-box span i {
+  text-shadow: none;
+}
+body.c7cc-on .application.coc7.dialog.bonus-selection section.window-content .bonus-penalty-selector .bonus-penalty-box span.penalty i,
+body.c7cc-on .application.coc7.dialog.bonus-selection section.window-content .bonus-penalty-selector .bonus-penalty-box span.double-penalty i {
+  color: var(--c7fj-bad, red);
+}
+body.c7cc-on .application.coc7.dialog.bonus-selection section.window-content .bonus-penalty-selector .bonus-penalty-box span.bonus i,
+body.c7cc-on .application.coc7.dialog.bonus-selection section.window-content .bonus-penalty-selector .bonus-penalty-box span.double-bonus i {
+  color: var(--c7fj-good, green);
+}
+body.c7cc-on .application.coc7.dialog.bonus-selection section.window-content .bonus-penalty-selector .bonus-penalty-box span.normal-roll i {
+  color: var(--c7cc-ink-dim);
+}
+body.c7cc-on .application.coc7.dialog.bonus-selection .bonus-penalty-box input[type=range] {
+  accent-color: var(--c7cc-accent);
+}
+
+/* ---- Boutons ---- */
+body.c7cc-on .application.coc7.dialog.bonus-selection footer button {
+  background: var(--c7cc-button-bg);
+  color: var(--c7cc-button-ink);
+  border: 1px solid var(--c7cc-button-border);
+  border-radius: calc(var(--c7fj-radius, 4px) * .6);
+  font-family: var(--c7cc-font-label);
+  text-transform: var(--c7fj-caps, none);
+  letter-spacing: var(--c7fj-spacing, 0);
+}
+body.c7cc-on .application.coc7.dialog.bonus-selection footer button:hover,
+body.c7cc-on .application.coc7.dialog.bonus-selection footer button:focus-visible {
+  background: var(--c7cc-button-hover);
+  border-color: var(--c7cc-accent);
+  box-shadow: none;
+}
+body.c7cc-on .application.coc7.dialog.bonus-selection footer button.default {
+  border-color: var(--c7cc-accent);
+}
