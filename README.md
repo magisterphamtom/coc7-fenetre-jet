@@ -1,3 +1,5 @@
+<p align="center"><img src=".github/banner.png" alt="CoC7 — Fenêtre de jet thématique" width="100%"></p>
+
 # CoC7 — Fenêtre de jet thématique
 
 Module Foundry VTT v14 pour le système **L'Appel de Cthulhu 7e (CoC7)**.

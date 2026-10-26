@@ -40,5 +40,11 @@
   "download": "https://github.com/magisterphamtom/coc7-fenetre-jet/releases/download/v1.0.0/module.zip",
   "bugs": "https://github.com/magisterphamtom/coc7-fenetre-jet/issues",
   "readme": "https://github.com/magisterphamtom/coc7-fenetre-jet/blob/main/README.md",
-  "license": "https://github.com/magisterphamtom/coc7-fenetre-jet/blob/main/LICENSE"
+  "license": "https://github.com/magisterphamtom/coc7-fenetre-jet/blob/main/LICENSE",
+  "media": [
+    {
+      "type": "cover",
+      "url": "https://raw.githubusercontent.com/magisterphamtom/coc7-fenetre-jet/main/.github/banner.png"
+    }
+  ]
 }
