@@ -1,0 +1,24 @@
+{
+  "C7FJ": {
+    "valeur": "Valeur du jet (seuil de réussite normale)",
+    "difficulte": "Difficulté",
+    "des": "Dés bonus / malus",
+    "aucun": "Aucun",
+    "chances": "Chances de réussite",
+    "astuce": "Entrée : lancer · Échap : annuler · ← → : dés · 1-4 : difficulté",
+    "aide": {
+      "d0": "Difficulté inconnue : le Gardien la fixe après le jet.",
+      "d1": "Normal : faire moins ou autant que la valeur.",
+      "d2": "Majeur : faire moins ou autant que la moitié de la valeur.",
+      "d3": "Extrême : faire moins ou autant que le cinquième de la valeur.",
+      "des": "Dé bonus : un dé des dizaines de plus, on garde le meilleur. Dé malus : on garde le pire. Ils s'annulent un pour un (maximum 2).",
+      "chances": "Probabilité de réussir avec cette difficulté et ces dés (01 réussit toujours, 100 échoue toujours).",
+      "inconnue": "* Difficulté inconnue : chances calculées pour une difficulté normale."
+    },
+    "reglage": {
+      "nom": "Nouvelle fenêtre de jet",
+      "aide": "Remplace la présentation de la fenêtre de jet de CoC7 (tuiles de difficulté, crans de dés, chances de réussite). Décochez pour retrouver celle d'origine."
+    },
+    "inconnue": "Inconnue"
+  }
+}

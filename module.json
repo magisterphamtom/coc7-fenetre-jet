@@ -1,8 +1,8 @@
 {
   "id": "coc7-fenetre-jet",
   "title": "CoC7 — Fenêtre de jet thématique",
-  "description": "Habille la fenêtre qui s'ouvre avant un jet de L'Appel de Cthulhu (difficulté, dés bonus et malus) aux couleurs du thème du chat : Années 20, New York, Par-delà les Montagnes Hallucinées, New York 2026, Antarctique 2026. Elle change toute seule avec la bascule d'époque. Nécessite « CoC7 — Cartes de chat thématiques ». Foundry v14.",
-  "version": "1.0.0",
+  "description": "Remplace la fenêtre qui s'ouvre avant un jet de L'Appel de Cthulhu (CoC7) : valeur du jet en grand, tuiles de difficulté avec leur seuil, dés bonus et malus en crans, chances de réussite calculées en direct. Elle prend les couleurs du thème du chat (Années 20, New York, Par-delà les Montagnes Hallucinées, New York 2026, Antarctique 2026) et change avec la bascule d'époque. Foundry v14.",
+  "version": "2.0.0",
   "authors": [
     {
       "name": "magisterphamtom",
@@ -24,20 +24,22 @@
         }
       }
     ],
-    "requires": [
+    "recommends": [
       {
         "id": "coc7-cartes-chat",
         "type": "module",
-        "manifest": "https://github.com/magisterphamtom/coc7-cartes-chat/releases/latest/download/module.json"
+        "manifest": "https://github.com/magisterphamtom/coc7-cartes-chat/releases/latest/download/module.json",
+        "reason": "Fournit les thèmes et les polices ; sans lui, la fenêtre garde une palette sombre neutre."
       }
     ]
   },
   "styles": [
-    "styles/fenetre-jet.css"
+    "styles/fenetre-jet.css",
+    "styles/dialogue.css"
   ],
   "url": "https://github.com/magisterphamtom/coc7-fenetre-jet",
   "manifest": "https://github.com/magisterphamtom/coc7-fenetre-jet/releases/latest/download/module.json",
-  "download": "https://github.com/magisterphamtom/coc7-fenetre-jet/releases/download/v1.0.0/module.zip",
+  "download": "https://github.com/magisterphamtom/coc7-fenetre-jet/releases/download/v2.0.0/module.zip",
   "bugs": "https://github.com/magisterphamtom/coc7-fenetre-jet/issues",
   "readme": "https://github.com/magisterphamtom/coc7-fenetre-jet/blob/main/README.md",
   "license": "https://github.com/magisterphamtom/coc7-fenetre-jet/blob/main/LICENSE",
@@ -45,6 +47,21 @@
     {
       "type": "cover",
       "url": "https://raw.githubusercontent.com/magisterphamtom/coc7-fenetre-jet/main/.github/banner.png"
+    }
+  ],
+  "esmodules": [
+    "scripts/main.js"
+  ],
+  "languages": [
+    {
+      "lang": "fr",
+      "name": "Français",
+      "path": "lang/fr.json"
+    },
+    {
+      "lang": "en",
+      "name": "English",
+      "path": "lang/en.json"
     }
   ]
 }

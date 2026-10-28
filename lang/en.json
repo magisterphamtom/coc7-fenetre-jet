@@ -1,0 +1,24 @@
+{
+  "C7FJ": {
+    "valeur": "Roll value (regular success threshold)",
+    "difficulte": "Difficulty",
+    "des": "Bonus / penalty dice",
+    "aucun": "None",
+    "chances": "Chance of success",
+    "astuce": "Enter: roll · Esc: cancel · ← →: dice · 1-4: difficulty",
+    "aide": {
+      "d0": "Unknown difficulty: the Keeper sets it after the roll.",
+      "d1": "Regular: roll equal to or under the value.",
+      "d2": "Hard: roll equal to or under half the value.",
+      "d3": "Extreme: roll equal to or under a fifth of the value.",
+      "des": "Bonus die: roll an extra tens die and keep the best. Penalty die: keep the worst. They cancel one for one (2 at most).",
+      "chances": "Probability of success with this difficulty and these dice (01 always succeeds, 100 always fails).",
+      "inconnue": "* Unknown difficulty: chance shown for a regular difficulty."
+    },
+    "reglage": {
+      "nom": "New roll window",
+      "aide": "Replaces the layout of the CoC7 roll window (difficulty tiles, dice steps, chance of success). Untick to get the original back."
+    },
+    "inconnue": "Unknown"
+  }
+}

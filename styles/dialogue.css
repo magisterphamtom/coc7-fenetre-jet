@@ -1,0 +1,84 @@
+/*
+ * CoC7 — Fenêtre de jet thématique 2.0 : nouvelle présentation.
+ * Couleurs et polices : thème du chat (--c7cc-*, module coc7-cartes-chat) ;
+ * sans thème actif, une palette sombre neutre.
+ */
+.application.bonus-selection.c7fj-v2 {
+  --fj-bg: #1d1a16; --fj-bg2: #2a251e; --fj-ink: #ece2cc; --fj-dim: #b4a78c; --fj-accent: #c9a24a;
+  --fj-border: #5a4c34; --fj-solid: #1d1a16; --fj-ok: #7cc48a; --fj-ko: #e06c5f; --fj-radius: 4px;
+  --fj-title: var(--font-primary); --fj-label: var(--font-primary); --fj-body: var(--font-primary); --fj-num: var(--font-primary);
+  --fj-caps: none; --fj-spacing: 0;
+}
+body.c7cc-on .application.bonus-selection.c7fj-v2 {
+  --fj-bg: var(--c7cc-bg); --fj-bg2: var(--c7fj-solid, var(--c7cc-level-bg)); --fj-ink: var(--c7cc-ink); --fj-dim: var(--c7cc-ink-dim);
+  --fj-accent: var(--c7cc-accent); --fj-border: var(--c7cc-border); --fj-solid: var(--c7fj-solid, #1d1a16); --fj-ok: var(--c7fj-good, var(--c7cc-success-ink)); --fj-ko: var(--c7fj-bad, var(--c7cc-failure-ink));
+  --fj-radius: var(--c7fj-radius, 4px); --fj-title: var(--c7cc-font-title); --fj-label: var(--c7cc-font-label); --fj-body: var(--c7cc-font-label); /* pas la police machine à écrire du corps des cartes */
+  --fj-num: var(--c7cc-font-total, var(--c7cc-font-title)); --fj-caps: var(--c7fj-caps, none); --fj-spacing: var(--c7fj-spacing, 0);
+}
+.application.bonus-selection.c7fj-v2 { width: 470px !important; background: var(--fj-bg); color: var(--fj-ink); }
+.application.bonus-selection.c7fj-v2 .window-content { background: transparent; color: var(--fj-ink); padding: 0; }
+.application.bonus-selection.c7fj-v2 .dialog-content { padding: 0; }
+
+.c7fj { padding: 14px 16px 6px; display: flex; flex-direction: column; gap: 10px; font-family: var(--fj-body); }
+.c7fj-tete { display: flex; align-items: center; gap: 12px; padding-bottom: 10px; border-bottom: 1px solid var(--fj-border); }
+.c7fj-tete img { width: 52px; height: 52px; object-fit: cover; flex: none; border: 1px solid var(--fj-border); border-radius: var(--fj-radius); background: var(--fj-bg2); }
+.c7fj-titres { flex: 1; min-width: 0; }
+.c7fj-titre { font-family: var(--fj-title); font-size: 22px; line-height: 1.1; color: var(--fj-accent); text-transform: var(--fj-caps); letter-spacing: var(--fj-spacing); }
+.c7fj-sous { font-family: var(--fj-label); font-size: 13px; color: var(--fj-dim); }
+.c7fj-valeur { font-family: var(--fj-num); font-size: 40px; line-height: 1; color: var(--fj-ink); white-space: nowrap; }
+.c7fj-valeur small { font-size: 18px; color: var(--fj-dim); margin-left: 1px; }
+
+.c7fj-champs { display: flex; flex-direction: column; gap: 6px; }
+.c7fj-champs .form-group { margin: 0; display: flex; align-items: center; gap: 10px; }
+.c7fj-champs .form-group label { flex: 1; font-family: var(--fj-label); font-size: 13px; color: var(--fj-dim); text-transform: uppercase; letter-spacing: .05em; }
+.c7fj-champs select, .c7fj-champs input { flex: 1.4; background: var(--fj-bg2); color: var(--fj-ink); border: 1px solid var(--fj-border); border-radius: var(--fj-radius); font-family: var(--fj-body); }
+.c7fj-champs select option { background: var(--fj-bg2); color: var(--fj-ink); }
+
+.c7fj-bloc { display: flex; flex-direction: column; gap: 4px; }
+.c7fj-legende { font-family: var(--fj-label); font-size: 13px; text-transform: uppercase; letter-spacing: .06em; color: var(--fj-dim); }
+.c7fj-legende i { font-size: 11px; cursor: help; }
+
+.c7fj button.c7fj-tuile, .c7fj button.c7fj-cran {
+  all: unset; box-sizing: border-box; cursor: pointer; text-align: center; color: var(--fj-ink); background: var(--fj-bg2);
+  font-family: var(--fj-label); transition: transform .08s, background .12s;
+}
+.c7fj-tuiles { display: grid; grid-template-columns: repeat(3, 1fr); gap: 6px; }
+.c7fj-tuiles.c7fj-n4 { grid-template-columns: .8fr 1fr 1fr 1fr; }
+.c7fj button.c7fj-tuile { display: flex; flex-direction: column; align-items: center; padding: 6px 4px 5px; border: 1px solid var(--fj-border); border-radius: var(--fj-radius); }
+.c7fj button.c7fj-tuile:hover { transform: translateY(-1px); border-color: var(--fj-accent); }
+.c7fj-tuile-nom { font-size: 13px; line-height: 1.15; }
+.c7fj-tuile-val { font-family: var(--fj-num); font-size: 28px; line-height: 1.05; }
+.c7fj button.c7fj-tuile.actif { background: var(--fj-accent); color: var(--fj-solid); border-color: var(--fj-accent); box-shadow: 0 0 0 2px var(--fj-solid), 0 0 0 3px var(--fj-accent); }
+
+.c7fj button.c7fj-tuile.actif span { color: var(--fj-solid); }
+.c7fj-crans { display: flex; border: 1px solid var(--fj-border); border-radius: var(--fj-radius); overflow: hidden; }
+.c7fj button.c7fj-cran { flex: 1; padding: 7px 2px; font-size: 15px; border-left: 1px solid var(--fj-border); }
+.c7fj button.c7fj-cran:first-child { border-left: none; }
+.c7fj button.c7fj-cran.malus { color: var(--fj-ko); }
+.c7fj button.c7fj-cran.bonus { color: var(--fj-ok); }
+.c7fj-d i { font-size: 9px; margin: 0 1px; opacity: .8; }
+.c7fj button.c7fj-cran.actif { background: var(--fj-accent); color: var(--fj-solid); }
+.c7fj button.c7fj-cran.malus.actif { background: var(--fj-ko); color: #fff; }
+.c7fj button.c7fj-cran.bonus.actif { background: var(--fj-ok); color: var(--fj-solid); }
+.c7fj button:focus-visible { outline: 2px solid var(--fj-accent); outline-offset: 1px; }
+
+.c7fj-chances { display: grid; grid-template-columns: 1fr auto; align-items: baseline; gap: 2px 8px; cursor: help; }
+.c7fj-chances[hidden] { display: none; }
+.c7fj-chances > span { font-family: var(--fj-label); font-size: 14px; }
+.c7fj-pct { font-family: var(--fj-num); font-size: 26px; }
+.c7fj-barre { grid-column: 1 / 3; height: 8px; background: var(--fj-bg2); border: 1px solid var(--fj-border); border-radius: var(--fj-radius); overflow: hidden; }
+.c7fj-barre > div { height: 100%; transition: width .15s; background: var(--fj-ok); }
+.c7fj-barre > div.moyen { background: #c9a24a; }
+.c7fj-barre > div.ko { background: var(--fj-ko); }
+.c7fj-astuce { margin: 0; font-size: 11px; color: var(--fj-dim); text-align: center; }
+
+/* Touches propres aux thèmes */
+body.c7cc-annees20 .c7fj-v2 .c7fj, body.c7cc-newyork .c7fj-v2 .c7fj {
+  background: repeating-conic-gradient(from 180deg at 50% -20%, color-mix(in srgb, var(--fj-accent) 7%, transparent) 0 4deg, transparent 4deg 8deg);
+  outline: 1px solid color-mix(in srgb, var(--fj-accent) 55%, transparent); outline-offset: -6px; padding: 18px 20px 8px;
+}
+body.c7cc-annees20 .c7fj-v2 button.c7fj-tuile, body.c7cc-newyork .c7fj-v2 button.c7fj-tuile {
+  clip-path: polygon(8px 0, calc(100% - 8px) 0, 100% 8px, 100% 100%, 0 100%, 0 8px); border-radius: 0;
+}
+body.c7cc-montagnes .c7fj-v2 .c7fj-tete { border-bottom: 3px double var(--fj-border); }
+body.c7cc-ny2026 .c7fj-v2 .c7fj, body.c7cc-antarctique2026 .c7fj-v2 .c7fj { gap: 12px; }
