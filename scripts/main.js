@@ -181,6 +181,10 @@ function construire(app, el) {
     const g = groupe(n);
     if (g) champs.append(g);
   }
+  // Autres lignes de CoC7 (9.x : talents appliqués au jet…) : gardées visibles, sauf difficulté et dés
+  for (const g of [...flex.querySelectorAll(":scope > .form-group")]) {
+    if (!g.querySelector('[name="difficulty"], [name="poolModifier"]')) champs.append(g);
+  }
   if (!champs.children.length) champs.remove();
   flex.hidden = true;
   flex.before(ui);

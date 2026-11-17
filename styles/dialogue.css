@@ -33,6 +33,11 @@ body.c7cc-on .application.bonus-selection.c7fj-v2 {
 .c7fj-champs .form-group label { flex: 1; font-family: var(--fj-label); font-size: 13px; color: var(--fj-dim); text-transform: uppercase; letter-spacing: .05em; }
 .c7fj-champs select, .c7fj-champs input { flex: 1.4; background: var(--fj-bg2); color: var(--fj-ink); border: 1px solid var(--fj-border); border-radius: var(--fj-radius); font-family: var(--fj-body); }
 .c7fj-champs select option { background: var(--fj-bg2); color: var(--fj-ink); }
+/* CoC7 9.x : chaque champ est enveloppé dans .form-value */
+.c7fj-champs .form-group label.flex-single { flex: 1; }
+.c7fj-champs .form-value { flex: 1.4; display: flex; flex-wrap: wrap; gap: 4px; min-width: 0; }
+.c7fj-champs .form-value select, .c7fj-champs .form-value input { flex: 1; width: 100%; }
+.c7fj-champs .form-value .content-link { font-size: 12px; }
 
 .c7fj-bloc { display: flex; flex-direction: column; gap: 4px; }
 .c7fj-legende { font-family: var(--fj-label); font-size: 13px; text-transform: uppercase; letter-spacing: .06em; color: var(--fj-dim); }
